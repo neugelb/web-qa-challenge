@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from "next/head";
+import Link from "next/link";
 
 const defaultEndpoint = `https://rickandmortyapi.com/api/character/`;
 
@@ -9,9 +9,9 @@ export async function getServerSideProps({ query }) {
   const data = await res.json();
   return {
     props: {
-      data
-    }
-  }
+      data,
+    },
+  };
 }
 
 export default function Character({ data }) {
@@ -19,12 +19,12 @@ export default function Character({ data }) {
   return (
     <div className="container">
       <Head>
-        <title>{ name }</title>
+        <title>{name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">{ name }</h1>
+        <h1 className="title">{name}</h1>
 
         <div className="profile">
           <div className="profile-image">
@@ -34,22 +34,22 @@ export default function Character({ data }) {
             <h2>Character Details</h2>
             <ul>
               <li>
-                <strong>Name:</strong> { name }
+                <strong>Name:</strong> {name}
               </li>
               <li>
-                <strong>Status:</strong> { status }
+                <strong>Status:</strong> {status}
               </li>
               <li>
-                <strong>Gender:</strong> { gender }
+                <strong>Gender:</strong> {gender}
               </li>
               <li>
-                <strong>Species:</strong> { species }
+                <strong>Species:</strong> {species}
               </li>
               <li>
-                <strong>Location:</strong> { location?.name }
+                <strong>Location:</strong> {location?.name}
               </li>
               <li>
-                <strong>Originally From:</strong> { origin?.name }
+                <strong>Originally From:</strong> {origin?.name}
               </li>
             </ul>
           </div>
@@ -57,9 +57,7 @@ export default function Character({ data }) {
 
         <p className="back">
           <Link href="/">
-            <a>
-              Back to All Characters
-            </a>
+            <a>Back to All Characters</a>
           </Link>
         </p>
       </main>
@@ -198,13 +196,13 @@ export default function Character({ data }) {
         }
 
         .search input {
-          margin-right: .5em;
+          margin-right: 0.5em;
         }
 
         @media (max-width: 600px) {
           .search input {
             margin-right: 0;
-            margin-bottom: .5em;
+            margin-bottom: 0.5em;
           }
 
           .search input,
@@ -253,5 +251,5 @@ export default function Character({ data }) {
         }
       `}</style>
     </div>
-  )
+  );
 }

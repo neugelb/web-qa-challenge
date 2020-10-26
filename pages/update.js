@@ -256,10 +256,6 @@ export default function Home({ data }) {
           padding-left: 0;
         }
 
-        .card:nth-child(2n + 1) {
-          margin-left:1px;
-        }
-
         .card {
           margin: 1rem;
           flex-basis: 45%;
@@ -268,7 +264,6 @@ export default function Home({ data }) {
           color: inherit;
           text-decoration: none;
           border: 1px solid #eaeaea;
-          border-radius: 10px;
           transition: color 0.15s ease, border-color 0.15s ease;
         }
 
